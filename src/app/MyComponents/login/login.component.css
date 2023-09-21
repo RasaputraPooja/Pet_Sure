@@ -1,0 +1,54 @@
+section {
+    position: relative;  /* This is added to allow absolute positioning inside */
+    height: 650px;
+    width: 360px;
+    /* border: 1px solid #ccc; */
+    margin-top: 40px;
+    margin-bottom: 20px;
+    /* left: 230px; */
+    background-color: rgba(202, 207, 244, 0.356);  /* Main background color */
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 50%;      /* These values center the circle vertically */
+    left: -59px;     /* Adjust this to position the circle more to the left if needed */
+    transform: translateY(-50%); /* This centers the circle based on its height */
+    width: 360px;   /* Width of the circle */
+    height: 340px;  /* Height of the circle */
+    
+    /* Radial gradient for the "dissolving" effect */
+    background-image: radial-gradient(rgba(243, 228, 173, 0.584), rgba(255, 241, 188, 0) 70%);
+
+    border-radius: 50%;  /* Makes it a circle */
+}
+
+
+
+body
+{
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;  /* width for iPhone SE */
+    margin: 0 auto;  /* center the body content */
+   
+
+   
+}
+header
+{
+    padding: 30px;
+    padding-top: 45px;
+}
+
+h2
+{
+    font-size: 28px;
+    font-weight: 400;
+    margin-left: 90px;
+    margin-top: 7px;
+}
+

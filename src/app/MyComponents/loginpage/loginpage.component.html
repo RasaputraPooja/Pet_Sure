@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <section>
+    <header>
+      <button type="button" class="btn-close" aria-label="Close"
+        style="margin-left: 290px; margin-top: -12px;" routerLink="/close"></button>
+      <h1 style="margin-top: 2px; margin-left: 25px;">Welcome to PetSure!</h1>
+    </header>
+
+    <div class="form1">
+      <div class="form-box">
+        <div class="button-box">
+          <div id="btn" [style.left]="btnLeftPosition"></div>
+          <button type="button" class="toggle-btn" (click)="showPolicyNumber()">Policy Number</button>
+          <button type="button" class="toggle-btn" (click)="showPetMicroChip()">Pet MicroChip</button>
+        </div>
+        <form [formGroup]="loginform">
+        <div *ngIf="isPolicyNumberVisible" class="input-group" style="margin-left: 10px;">
+          <!-- <input type="text" class="input-field" placeholder="Enter Your Policy Number" [(ngModel)]="policyNumber"> -->
+          <!-- <div class="form-group" id="id1">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="   Enter Your Policy Number" [(ngModel)]="policyNumber">
+                      </div> -->
+          <!-- <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="   Enter Your password" [(ngModel)]="password">
+                      </div> -->
+          <!-- <mat-form-field>
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="toggleHide()" [attr.aria-label]="'Toggle password visibility'" [attr.aria-pressed]="hide">
+                          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field> -->
+          
+            <mat-form-field appearance="outline">
+              <mat-label> Enter Your Policy Number</mat-label>
+              <input matInput placeholder="Enter Your Policy Number" type="text"   formControlName="policy_Number">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label> Enter Your Password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter Your Password" formControlName="pass_word">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide" class="password-toggle-btn" >
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+
+            <!-- <input type="text" class="input-field" placeholder="Enter Your password" [(ngModel)]="password"> -->
+            <div style="margin-left: 47px;margin-top: 9px;">
+              <p>Forgot your password? <span><a href="" routerLink="/forgotpassword">Click here</a></span></p>
+            </div>
+
+            <!-- <div>
+              <button type="button" id="loginbutton" class="btn"
+              [disabled]="loginform.invalid"
+              [class.green-button]="loginform.valid" 
+              >Login</button>
+            </div> -->
+            <button type="button" id="loginbutton"  [disabled]="loginform.invalid" class="btn btn-custom" style="margin-left: 15px;border-radius: 25px;"  [class.login-button]="loginform.valid" >Login</button>
+            <!-- <button type="button" class="btn" ></button> -->
+         
+        </div>
+      </form>
+        
+      <form [formGroup]="loginform2">
+        <div *ngIf="isPetMicrochipVisible" class="input-group" style="margin-left: 10px;">
+          <!-- <input type="text" class="input-field" placeholder="Enter Your MicroChip Number" [(ngModel)]="microChipNumber">
+                    <input type="text" class="input-field" placeholder="Enter Your password" [(ngModel)]="password">
+                    <p>Forgot your password? <span><a href="">Click here</a></span></p>
+                    <button type="submit" class="submit-btn">Login</button> -->
+          <!-- <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="   Enter Your MicroChip Number" [(ngModel)]="microChipNumber">
+                      </div> -->
+          <!-- <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="   Enter Your password" [(ngModel)]="password">
+                      </div> -->
+          <mat-form-field appearance="outline">
+            <mat-label> Enter Your pet microchip ID</mat-label>
+            <input matInput placeholder="Enter Your pet microchip ID" type="text" [(ngModel)]="microChipNumber" formControlName="microchip_id">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label> Enter Your Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter Your Password" [(ngModel)]="password1" formControlName="pass_word2">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide" class="password-toggle-btn" >
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <!-- <input type="text" class="input-field" placeholder="Enter Your password" [(ngModel)]="password"> -->
+          <div style="margin-left: 47px;margin-top: 9px;">
+            <p>Forgot your password? <span><a href="">Click here</a></span></p>
+          </div>
+
+          <div>
+            <button type="button" id="loginbutton" class="btn btn-custom "
+                  [disabled]="loginform2.invalid"
+                  style="margin-left: 15px;border-radius: 25px;" 
+                  [class.login-button]="loginform2.valid"
+                  >Login</button>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
